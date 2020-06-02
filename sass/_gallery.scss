@@ -1,4 +1,28 @@
 .gallery {
-    background-color: $color-gray-dark-1;
+    background-color: $color-gray-light-1;
     grid-column: full-start/full-end;
+
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    //height is based on with of screen
+    grid-template-rows: repeat(7,5vw);
+    grid-gap: 1.5rem;
+    //Makes it look like gap is also around container
+    padding: 1.5rem;
+
+    padding: 1.5rem;
+
+    //figure that encompasses image
+    &__item {
+        grid-row: 1/3;
+        grid-column: 1/3;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        //avoids white space after image as if it were text
+        display: block;
+    }
 }
