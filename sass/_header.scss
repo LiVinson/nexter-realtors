@@ -1,4 +1,55 @@
 .header {
     background-color: $color-gray-dark-1;
     grid-column: full-start/col-end 6;
+    background-image: linear-gradient(rgba($color-secondary, .93), rgba($color-secondary, .93)), url("../img/hero.jpeg");
+    background-size: cover;
+    background-position: center;
+    padding: 8rem;
+    padding-top: 4rem;
+
+    display: grid;
+    //logo occupies all space not occupied bu other header elements.
+    //rows defined by fr are dynamic as vh decreases
+    grid-template-rows: 1fr min-content 6rem 1fr;
+    grid-row-gap: 1.5rem;
+    grid-template-columns: max-content;
+    justify-content: center;
+
+    &__logo {
+        height: 3rem;
+        justify-self: center;
+    }
+
+    &__btn {
+        align-self: start;
+        justify-self: start;
+    }
+
+    &__seen-on-text {
+        display: grid;
+        grid-template-columns: 1fr max-content 1fr;
+        align-items:center;
+        column-gap: 1.5rem;
+        font-size: 1.6rem;
+        color: $color-gray-light-2;
+        &::before,
+        &::after {
+            content: "";
+            height: 1px;
+            display: block;
+            background-color: currentColor;
+        }
+    }
+    &__seen-on-logos {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-gap: 3rem;
+        justify-items: center;
+
+        img {
+            height: 2.5rem;
+            filter:brightness(70%)
+        }
+    }
+    
 }
